@@ -1,8 +1,10 @@
 body {
-   background-image: url('../assets/Background-Image.svg');
-  background-size: cover;   
-  background-repeat: no-repeat; 
-  background-position: center;  
+  background-image: url('../assets/Background-Image.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
 }
 
 .main-container {
@@ -11,19 +13,18 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  padding: 20px;
+  text-align: center;
 }
-
-
 
 .Title {
   font-family: "Cinzel", serif;
   font-weight: bold;
-  font-size: 35px !important;
-  
+  font-size: 35px;
 }
 
 .outlined-text {
-  color: #D2C882;;
+  color: #D2C882;
   font-size: 3em;
   text-shadow:
     -2px -2px 0 #000,
@@ -34,4 +35,40 @@ body {
     2px  0px 0 #000,
     0px  2px 0 #000,
    -2px  0px 0 #000;
+}
+
+/* === MEDIA QUERIES === */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .Title {
+    font-size: 28px;
+  }
+
+  .outlined-text {
+    font-size: 2.2em;
+  }
+
+  .main-container img[alt="Play Classic"] {
+    width: 250px !important;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .Title {
+    font-size: 22px;
+  }
+
+  .outlined-text {
+    font-size: 1.6em;
+  }
+
+  .main-container img[alt="Play Classic"] {
+    width: 200px !important;
+  }
+
+  .main-container img[alt="Logo"] {
+    width: 180px;
+  }
 }
