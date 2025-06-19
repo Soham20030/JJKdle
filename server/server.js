@@ -22,7 +22,7 @@ app.get('/api/characters', async(req,res) => {
         const result = await pool.query('SELECT * FROM characters');
         res.json(result.rows);
     } catch (error) {
-        console.error(err);
+        console.error(error);
         res.status(500).send('Server Error');
         
     }
