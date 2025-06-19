@@ -150,6 +150,8 @@ html, body {
     height: 48px;
     font-size: 16px;
   }
+
+  
 }
 
 /* Mobile */
@@ -194,5 +196,9 @@ html, body {
 
   .congrats > p {
     font-size: 16px;
+  }
+
+    .main-container img[alt="Logo"] {
+    width: 180px;
   }
 }
