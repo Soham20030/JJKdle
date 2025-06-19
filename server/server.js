@@ -8,6 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
+app.get('/health', (req, res) => {
+  res.send('Backend is running!');
+});
+
+
 //Serve image files
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
