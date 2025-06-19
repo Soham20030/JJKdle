@@ -3,7 +3,7 @@ import Confetti from 'react-confetti';
 import GuessRow from './GuessRow';
 import { getTodayCharacter, setTodayCharacter } from '../utils/dailyCharacters';
 import logo from '../assets/logo.svg';
-import hint from '../assets/hint.svg';
+import hint from '../assets/Hint.svg';
 import '../styles/GamePage.css'; // Add this if you want to move styles out of inline
 
 export default function GamePage() {
