@@ -30,8 +30,8 @@ export default function GamePage() {
   }, []);
 
   useEffect(() => {
-    fetch('api/characters')
-      .then(res => res.json())
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/api/characters`)      
+  .then(res => res.json())
       .then(data => {
         setCharacters(data);
 
