@@ -31,12 +31,12 @@
 
 .guess-header .guess-attribute {
   width: 100px;
-  height: 64px; /* Match regular cell height */
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px; /* Match padding */
-  font-size: 12px; /* Match font size */
+  padding: 6px;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
@@ -64,7 +64,7 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, background-color 0.3s ease;
   animation-fill-mode: both;
-  position: relative; /* Needed for pseudo-element */
+  position: relative;
   border-left: 1px solid #86090A;
 }
 
@@ -86,8 +86,6 @@
 .guess-row .guess-attribute:first-child {
   padding: 0;
 }
-
-
 
 /* Color feedback */
 .green {
@@ -116,9 +114,54 @@
   animation: fadeIn 0.5s ease forwards;
 }
 
-/* Delays for animation sequencing */
 .delay-0 { animation-delay: 0s; }
 .delay-1 { animation-delay: 0.15s; }
 .delay-2 { animation-delay: 0.3s; }
 .delay-3 { animation-delay: 0.45s; }
 .delay-4 { animation-delay: 0.6s; }
+
+/* ================== */
+/* 📱 Responsive Layout */
+/* ================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .guess-row {
+    grid-template-columns: 80px repeat(4, 80px);
+    width: 90%;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .guess-attribute, .guess-header .guess-attribute {
+    width: 80px;
+    height: 56px;
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  .guess-image {
+    border-radius: 6px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .guess-row {
+    grid-template-columns: 60px repeat(4, 60px);
+    width: 100%;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .guess-attribute, .guess-header .guess-attribute {
+    width: 60px;
+    height: 48px;
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .guess-image {
+    border-radius: 5px;
+  }
+}
