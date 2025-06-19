@@ -6,7 +6,7 @@
 
 .guess-row {
   display: grid;
-  grid-template-columns: 100px repeat(4, 100px);
+  grid-template-columns: 100px repeat(4, 1fr);
   gap: 20px;
   margin: 12px 0;
   padding: 16px;
@@ -29,27 +29,10 @@
   color: #86090A;
 }
 
+.guess-attribute,
 .guess-header .guess-attribute {
-  width: 100px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  border-left: 1px solid #86090A;
-  border-right: 1px solid #86090A;
-  background-color: #f4f4f4;
-  box-shadow: none;
-  color: #86090A;
-}
-
-.guess-attribute {
-  width: 100px;
-  height: 64px;
+  width: 100%;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,11 +44,18 @@
   padding: 6px;
   border-radius: 10px;
   background-color: #fff6d3;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, background-color 0.3s ease;
   animation-fill-mode: both;
   position: relative;
   border-left: 1px solid #86090A;
+}
+
+.guess-header .guess-attribute {
+  background-color: #f4f4f4;
+  text-transform: uppercase;
+  box-shadow: none;
+  color: #86090A;
 }
 
 .guess-header .guess-attribute:first-child {
@@ -127,16 +117,16 @@
 /* Tablets */
 @media (max-width: 768px) {
   .guess-row {
-    grid-template-columns: 80px repeat(4, 80px);
+    grid-template-columns: 80px repeat(4, 1fr);
     width: 90%;
     gap: 12px;
     padding: 12px;
   }
 
-  .guess-attribute, .guess-header .guess-attribute {
-    width: 80px;
-    height: 56px;
+  .guess-attribute,
+  .guess-header .guess-attribute {
     font-size: 11px;
+    min-height: 56px;
     padding: 4px;
   }
 
@@ -148,16 +138,16 @@
 /* Mobile */
 @media (max-width: 480px) {
   .guess-row {
-    grid-template-columns: 60px repeat(4, 60px);
+    grid-template-columns: 60px repeat(4, 1fr);
     width: 100%;
     gap: 8px;
     padding: 10px;
   }
 
-  .guess-attribute, .guess-header .guess-attribute {
-    width: 60px;
-    height: 48px;
+  .guess-attribute,
+  .guess-header .guess-attribute {
     font-size: 10px;
+    min-height: 48px;
     padding: 2px;
   }
 
