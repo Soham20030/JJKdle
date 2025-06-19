@@ -2,28 +2,49 @@ html, body {
   height: auto;
   min-height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .game-wrapper {
   background-image: url('../assets/Background-Image.svg');
-  background-size: cover;   
-  background-repeat: no-repeat; 
-  background-position: center;  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  height: auto;
   padding: 20px;
-  background-color: #f8f8f8;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
 }
 
 .Title {
   font-family: "Cinzel", serif;
   font-weight: bold;
   font-size: 48px;
-  
+}
+
+.outlined-text {
+  color: #D2C882;
+  font-size: 3em;
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+     2px  2px 0 #000,
+    -2px  2px 0 #000,
+    0px -2px 0 #000,
+    2px  0px 0 #000,
+    0px  2px 0 #000,
+   -2px  0px 0 #000;
 }
 
 .hintbox {
@@ -31,15 +52,31 @@ html, body {
   height: 276px;
   background-color: #D2C882;
   border: 14px solid #86090A;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .hintbox > p {
   font-size: 24px;
   color: #86090A;
+  margin: 10px 0;
 }
 
 .hint-ico {
-  margin-top: 20px;
+  margin-top: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+.search-container > input {
+  padding-left: 10px;
+  border-radius: 28px;
+  color: #86090A;
+  font-size: 20px;
+  border: solid 4px #86090A;
+  background-color: rgba(210, 200, 130, 0.85);
+  width: 314px;
+  height: 60px;
 }
 
 .guess-btn {
@@ -51,10 +88,11 @@ html, body {
   height: 50px;
   background-color: #D2C882;
   border: solid 4px #86090A;
-  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.guess-btn:hover{
+.guess-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -70,36 +108,91 @@ html, body {
   font-weight: bold;
 }
 
-.search-container  > input {
-  padding-left: 10px;
-  border-radius: 28px;
-  color: #86090A;
-  font-size: 24px;
-  border: solid 4px #86090A;
-  background-color: rgba(210, 200, 130, 0.85);
-  width: 314px;
-  height: 77px;
-}
-
-.outlined-text {
-  color: #D2C882;;
-  font-size: 3em;
-  text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-     2px  2px 0 #000,
-    -2px  2px 0 #000,
-    0px -2px 0 #000,
-    2px  0px 0 #000,
-    0px  2px 0 #000,
-   -2px  0px 0 #000;
-}
-
-.game-container {
+.guess-history {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
+}
+
+/* ================== */
+/* 📱 Responsive Layout */
+/* ================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .Title {
+    font-size: 36px;
+  }
+
+  .outlined-text {
+    font-size: 2.2em;
+  }
+
+  .hintbox {
+    width: 90%;
+    height: auto;
+    padding: 16px;
+  }
+
+  .hintbox > p {
+    font-size: 18px;
+  }
+
+  .search-container > input {
+    width: 80%;
+    font-size: 18px;
+    height: 54px;
+  }
+
+  .guess-btn {
+    width: 160px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .Title {
+    font-size: 26px;
+  }
+
+  .outlined-text {
+    font-size: 1.6em;
+  }
+
+  .hintbox {
+    width: 100%;
+    border: 10px solid #86090A;
+  }
+
+  .hintbox > p {
+    font-size: 16px;
+  }
+
+  .hint-ico {
+    width: 36px;
+    height: 36px;
+  }
+
+  .search-container > input {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .guess-btn {
+    width: 150px;
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .congrats > h3 {
+    font-size: 22px;
+  }
+
+  .congrats > p {
+    font-size: 16px;
+  }
 }
