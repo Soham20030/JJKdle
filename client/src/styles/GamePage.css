@@ -152,7 +152,7 @@ html, body {
   }
 
   .main-container img[alt="Logo"] {
-    width: 180px;
+    width: 180px !important;
   }
 
   
@@ -203,6 +203,6 @@ html, body {
   }
 
     .main-container img[alt="Logo"] {
-    width: 180px;
+    width: 180px !important;
   }
 }
